@@ -26,6 +26,11 @@ set _mindim=1424
         magick "%~dpn1_res.png" "%~dpn1_res.jpg"
     )
 
+    :: rename if needed:
+    if "%~x1"==".jpeg" (
+        ren "%~dpn1_res.jpeg" "%~n1_res.jpg"
+    )
+
     :: optimize:
     cjpeg -optimize -outfile "%~dpn1_res_opt.jpg" "%~dpn1_res.jpg"
 
