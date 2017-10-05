@@ -4,7 +4,7 @@ setlocal
 
 git init
 
-set /p "name=User name: "
+set /p  "name=User name:  "
 set /p "email=User email: "
 
 git config user.name %name%
