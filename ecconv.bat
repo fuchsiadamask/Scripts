@@ -13,17 +13,9 @@ echo ---------------------------------------------------------------------------
 echo %defaultColor%
 
 :LOOP
-    if "%~x1"==".epub" (
-        set ext=epub
-    ) else if "%~x1"==".mobi" (
-        set ext=mobi
-    ) else if "%~x1"==".azw3" (
-        set ext=azw3
-    ) else (
-        set ext=other
-    )
+    ebook-convert %1 "%~dpn1_cover%~x1" --cover "%~dpn1.jpg"
 
-    ebook-convert %1 "%~dpn1_%ext%_cover.epub" --cover "%~dpn1.jpg"
+    call ebconv "%~dpn1_cover%~x1"
 
     echo %strongRed%
     echo -------------------------------------------------------------------------------

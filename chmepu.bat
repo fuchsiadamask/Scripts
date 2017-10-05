@@ -15,8 +15,6 @@ echo %defaultColor%
 :LOOP
     ebook-convert %1 "%~dpn1_chm.epub" --cover "%~dpn1.jpg"
 
-    call ebconv "%~dpn1_chm.epub"
-
     echo %strongBlue%
     echo -------------------------------------------------------------------------------
     echo %defaultColor%

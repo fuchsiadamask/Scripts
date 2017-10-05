@@ -5,19 +5,17 @@ setlocal
 :: there is invisible ESC character (ASCII code 27) after '=':
 set esc=
 
-set strongBlue=%esc%[1;34m
+set strongRed=%esc%[1;31m
 set defaultColor=%esc%[0m
 
-echo %strongBlue%
+echo %strongRed%
 echo -------------------------------------------------------------------------------
 echo %defaultColor%
 
 :LOOP
-    ebook-convert %1 "%~dpn1_chm.epub" --cover "%~dpn1.jpg"
+    ebook-convert %1 "%~dpn1_cover%~x1" --cover "%~dpn1.jpg"
 
-    call ebconv "%~dpn1_chm.epub"
-
-    echo %strongBlue%
+    echo %strongRed%
     echo -------------------------------------------------------------------------------
     echo %defaultColor%
 
