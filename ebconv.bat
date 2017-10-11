@@ -27,8 +27,8 @@ echo %defaultColor%
         --pdf-page-numbers ^
         --margin-top 38 --margin-bottom 38 --margin-left 52 --margin-right 52 ^
         --paper-size b5 ^
-        --pdf-sans-family "Source Sans Pro" --pdf-serif-family "Crimson Text" --pdf-mono-family "Cousine" ^
-        --pdf-default-font-size 16 --pdf-mono-font-size 12 ^
+        --pdf-serif-family "PT Serif" --pdf-sans-family "PT Sans" --pdf-mono-family "Cousine" ^
+        --pdf-default-font-size 14 --pdf-mono-font-size 12 ^
         --filter-css font-family,font-size
 
     echo %strongCyan%
