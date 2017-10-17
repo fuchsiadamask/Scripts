@@ -13,7 +13,7 @@ echo ---------------------------------------------------------------------------
 echo %defaultColor%
 
 :LOOP
-    ebook-convert %1 "%~dpn1_cover%~x1" --cover "%~dpn1.jpg"
+    call ebocov %1
 
     call ebconv "%~dpn1_cover%~x1"
 
