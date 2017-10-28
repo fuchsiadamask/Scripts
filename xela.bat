@@ -1,9 +1,5 @@
 @echo off
 
-setlocal
+cd /d "%~dp1"
 
-set foo=%~n0
-
-xelatex -synctex=1 -interaction=nonstopmode -shell-escape "%foo%.tex"
-
-endlocal
+xelatex -synctex=1 -interaction=nonstopmode -shell-escape "%~nx1"
