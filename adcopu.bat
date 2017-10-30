@@ -2,11 +2,27 @@
 
 setlocal
 
-git add --all
+:BEGIN
+    set /p "choise=Add all/tracked [A/U]? "
 
-set /p "descr=Commit description: "
+    if %choise%==A goto ALL
+    if %choise%==a goto ALL
+    if %choise%==U goto UPDATE
+    if %choise%==u goto UPDATE
 
-git commit -m "%descr%"
-git push origin
+    goto BEGIN
+
+:ALL
+    git add -A
+    goto CONTINUE
+
+:UPDATE
+    git add -u
+
+:CONTINUE
+    set /p "descr=Commit description: "
+
+    git commit -m "%descr%"
+    git push origin
 
 endlocal
