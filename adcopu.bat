@@ -23,6 +23,7 @@ setlocal
     set /p "descr=Commit description: "
 
     git commit -m "%descr%"
+
     git push origin
 
 endlocal
