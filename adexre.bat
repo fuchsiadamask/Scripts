@@ -2,8 +2,6 @@
 
 setlocal
 
-git init
-
 set /p "addr=Remote address: "
 
 git remote add origin %addr%
