@@ -11,21 +11,28 @@ set defaultColor=%esc%[0m
 
 echo %strongCyan%
 echo -------------------------------------------------------------------------------
-echo %strongMagenta%
 
 :LOOP
     :BEGIN
+        echo %strongMagenta%
+
         cd /d "%~dp1"
 
-        set /p "choise=Use parent/grandparent/grandgrandparent directory as a name? [p/g/gg]? "
+        set /p "choise=Use current file name/parent/grandparent/grandgrandparent directory as a name? [c/p/g/gg]? "
 
         echo %defaultColor%
 
+        if %choise%==c goto CURRENT
         if %choise%==p goto PARENT
         if %choise%==g goto GPARENT
         if %choise%==gg goto GGPARENT
 
         goto BEGIN
+
+    :CURRENT
+        set "name=%~n1"
+
+        goto CONTINUE
 
     :PARENT
         for %%a in ("%~dp1.") do set "name=%%~nxa"
