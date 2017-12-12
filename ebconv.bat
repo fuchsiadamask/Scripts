@@ -19,6 +19,8 @@ echo %defaultColor%
         set ext=mobi
     ) else if "%~x1"==".azw3" (
         set ext=azw3
+    ) else if "%~x1"==".fb2" (
+        set ext=fb2
     ) else (
         set ext=other
     )
