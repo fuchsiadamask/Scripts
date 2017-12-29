@@ -54,7 +54,7 @@ echo ---------------------------------------------------------------------------
         cd ..\..\..
 
     :CONTINUE
-        ebook-convert %1 "%name%_html.epub"
+        ebook-convert %1 "%name%_html.epub" --no-default-epub-cover
 
         call ebconv "%name%_html.epub"
 
